@@ -72,12 +72,26 @@ Built with [Vite](https://vite.dev/) library mode (ESM + CJS). XML requests use 
 
 This project uses [Bun](https://bun.sh/) for installs, scripts, and running TypeScript tooling.
 
+### Local playground (no build / npm publish)
+
+Copy `.env.example` to `.env` and set `ACCESS_KEY`, `SECRET_KEY`, and `APP_KEY`. Bun loads `.env` automatically.
+
 ```bash
 bun install
+bun run dev                    # smoke test against live API (imports ../src)
+bun run dev contractors find   # call a specific resource
+bun run dev invoices get 123   # get by id
+```
+
+`bun run dev` uses `--watch` and reloads when you edit SDK source under `src/`.
+
+```bash
 bun run sync:postman    # download latest collection from doc.wfirma.pl
 bun run generate:modules
-bun run build
+bun run build           # only needed before publishing
+bun run build:watch     # watch dist for library consumers
 bun test
+bun run typecheck
 ```
 
 ## License
