@@ -9,4 +9,5 @@ dist/
 package-lock.json
 docs/node_modules/
 docs/.next/
+docs/out/
 npm-debug.log*
