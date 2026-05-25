@@ -44,6 +44,14 @@
     "poland"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orafal-dev/wfirma-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/orafal-dev/wfirma-sdk/issues"
+  },
+  "homepage": "https://github.com/orafal-dev/wfirma-sdk#readme",
   "engines": {
     "bun": ">=1.1.0"
   },
