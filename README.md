@@ -1,5 +1,7 @@
 # wfirma-sdk
 
+[![npm version](https://img.shields.io/npm/v/wfirma-sdk)](https://www.npmjs.com/package/wfirma-sdk)
+
 TypeScript SDK for the [wFirma.pl API](https://doc.wfirma.pl/), generated from the official Postman collection.
 
 ## Installation
