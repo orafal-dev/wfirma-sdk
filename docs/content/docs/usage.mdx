@@ -1,0 +1,41 @@
+---
+title: Usage
+description: Invoices, resources, and XML payloads
+---
+
+## Invoices (typed module)
+
+```ts
+const invoice = await api.invoices.add({
+  type: "normal",
+  contractor: { name: "Acme Sp. z o.o.", nip: "5252525252" },
+});
+
+const found = await api.invoices.find();
+const one = await api.invoices.get(123);
+await api.invoices.send(123);
+```
+
+## Any resource from the Postman collection
+
+All resources from [doc.wfirma.pl](https://doc.wfirma.pl/) are available via `resource()`:
+
+```ts
+await api.resource("contractors").add({
+  name: "Kontrahent",
+  zip: "00-001",
+  country: "PL",
+  nip: "1111111111",
+});
+
+await api.resource("goods").find({ limit: 20, page: 1 });
+await api.resource("payments").get(99);
+```
+
+Supported resources include `contractors`, `invoices`, `goods`, `payments`, `expenses`, `documents`, `webhooks`, warehouse document types, and more. Run `bun run generate:modules` after syncing the collection to refresh definitions.
+
+## XML payloads
+
+The API uses XML by default. The SDK builds and parses XML automatically. Pass a plain object for `add` / `edit`; it is wrapped in the correct `<api><resource>…</resource></api>` structure.
+
+For full control, pass a raw XML string as `body` to `client.request()`.

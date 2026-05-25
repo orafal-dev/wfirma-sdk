@@ -1,0 +1,42 @@
+---
+title: Development
+description: Local playground, scripts, and publishing
+---
+
+Built with [Vite](https://vite.dev/) library mode (ESM + CJS). XML requests use [`fast-xml-builder`](https://www.npmjs.com/package/fast-xml-builder); responses are parsed with [`fast-xml-parser`](https://www.npmjs.com/package/fast-xml-parser).
+
+The SDK repo uses [Bun](https://bun.sh/) for installs, scripts, and running TypeScript tooling.
+
+## Local playground
+
+Copy `.env.example` to `.env` and set `ACCESS_KEY`, `SECRET_KEY`, and `APP_KEY`. Bun loads `.env` automatically.
+
+```bash
+bun install
+bun run dev                    # smoke test against live API
+bun run dev contractors find   # call a specific resource
+bun run dev invoices get 123   # get by id
+```
+
+`bun run dev` uses `--watch` and reloads when you edit SDK source under `src/`.
+
+## Scripts
+
+| Script | Description |
+|--------|-------------|
+| `bun run sync:postman` | Download latest collection from doc.wfirma.pl |
+| `bun run generate:modules` | Regenerate resource definitions |
+| `bun run build` | Build library for publishing |
+| `bun test` | Unit tests |
+| `bun run typecheck` | TypeScript check |
+
+## Documentation site
+
+From the repository root:
+
+```bash
+npm run docs:dev
+npm run docs:build
+```
+
+The site lives in `docs/` (Next.js + [Fumadocs](https://www.fumadocs.dev/docs)).

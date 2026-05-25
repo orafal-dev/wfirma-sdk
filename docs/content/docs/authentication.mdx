@@ -1,0 +1,23 @@
+---
+title: Authentication
+description: API keys and client configuration
+---
+
+Create API keys in wFirma: **Settings → Security → Applications → API Keys**. You need `accessKey`, `secretKey`, and an integration `appKey` ([official docs](https://doc.wfirma.pl/#autoryzacja)).
+
+```ts
+import { WFirmaClient, createWFirmaModules } from "wfirma-sdk";
+
+const client = new WFirmaClient({
+  credentials: {
+    accessKey: process.env.WFIRMA_ACCESS_KEY!,
+    secretKey: process.env.WFIRMA_SECRET_KEY!,
+    appKey: process.env.WFIRMA_APP_KEY!,
+  },
+  companyId: process.env.WFIRMA_COMPANY_ID,
+});
+
+const api = createWFirmaModules(client);
+```
+
+`companyId` is optional but required for some multi-company operations.

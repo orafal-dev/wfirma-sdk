@@ -7,4 +7,6 @@ dist/
 
 # Use Bun — ignore npm lockfile if created accidentally
 package-lock.json
+docs/node_modules/
+docs/.next/
 npm-debug.log*

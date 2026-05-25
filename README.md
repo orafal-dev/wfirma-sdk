@@ -68,6 +68,15 @@ The API uses XML by default. The SDK builds and parses XML automatically. Pass a
 
 For full control, pass a raw XML string as `body` to `client.request()`.
 
+## Documentation
+
+Full docs are in [`docs/`](./docs/) ([Fumadocs](https://www.fumadocs.dev/docs) + Next.js).
+
+```bash
+npm run docs:dev    # http://localhost:3000/docs
+npm run docs:build
+```
+
 ## Development
 
 Built with [Vite](https://vite.dev/) library mode (ESM + CJS). XML requests use [`fast-xml-builder`](https://www.npmjs.com/package/fast-xml-builder); responses are parsed with [`fast-xml-parser`](https://www.npmjs.com/package/fast-xml-parser).
