@@ -1,6 +1,6 @@
 {
   "name": "wfirma-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript SDK for the wFirma.pl API (https://doc.wfirma.pl/)",
   "type": "module",
   "packageManager": "bun@1.3.0",
